@@ -68,7 +68,7 @@ typedef struct {
 	uint8_t  temp:1;    				 	 // 用于消抖	
 	
   uint8_t  state:1;              // 读取IO口返回的状态
-	uint8_t  press_state:1;              // 按下
+	uint8_t  press_state:1;        // 按下
 	uint8_t  pcnt_state:1;         // 连续按下	
 	uint8_t  bounce_state:1;			 // 弹起
 	uint8_t  dbclick_state:1;      // 双击

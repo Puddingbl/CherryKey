@@ -42,11 +42,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 //			printf("U=0x%x\n", adcValue);				
 			cont1 = 0;
 		}	
+		cont1++;
 		my_tick_inc(1);  // µÎ´ð
 		key_detect_scan();
 		HAL_ADC_Start_IT(&hadc1);			 // Æô¶¯ADCÖÐ¶Ï	
-	}
-	cont1++;
+	}	
 }
 
 /**

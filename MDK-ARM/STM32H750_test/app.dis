@@ -31,8 +31,8 @@
     Program header entries: 1
     Section header entries: 16
 
-    Program header offset: 388680 (0x0005ee48)
-    Section header offset: 388712 (0x0005ee68)
+    Program header offset: 388664 (0x0005ee38)
+    Section header offset: 388696 (0x0005ee58)
 
     Section header string table index: 15
 
@@ -7584,37 +7584,37 @@
         0x0800513a:    f2401138    @.8.    MOVW     r1,#0x138
         0x0800513e:    6800        .h      LDR      r0,[r0,#0]
         0x08005140:    f2c24100    ...A    MOVT     r1,#0x2400
-        0x08005144:    f24004d0    @...    MOVW     r4,#0xd0
-        0x08005148:    f2c24400    ...D    MOVT     r4,#0x2400
-        0x0800514c:    6809        .h      LDR      r1,[r1,#0]
-        0x0800514e:    4288        .B      CMP      r0,r1
-        0x08005150:    d120         .      BNE      0x8005194 ; HAL_TIM_PeriodElapsedCallback + 92
-        0x08005152:    8820         .      LDRH     r0,[r4,#0]
-        0x08005154:    f64c41cd    L..A    MOV      r1,#0xcccd
+        0x08005144:    6809        .h      LDR      r1,[r1,#0]
+        0x08005146:    4288        .B      CMP      r0,r1
+        0x08005148:    bf18        ..      IT       NE
+        0x0800514a:    bd10        ..      POPNE    {r4,pc}
+        0x0800514c:    f24004d0    @...    MOVW     r4,#0xd0
+        0x08005150:    f64c41cd    L..A    MOV      r1,#0xcccd
+        0x08005154:    f2c24400    ...D    MOVT     r4,#0x2400
         0x08005158:    f6cc41cc    ...A    MOVT     r1,#0xcccc
-        0x0800515c:    4348        HC      MULS     r0,r1,r0
-        0x0800515e:    f6491199    I...    MOV      r1,#0x9999
-        0x08005162:    f6c11199    ....    MOVT     r1,#0x1999
-        0x08005166:    ea4f0070    O.p.    ROR      r0,r0,#1
-        0x0800516a:    4288        .B      CMP      r0,r1
-        0x0800516c:    d801        ..      BHI      0x8005172 ; HAL_TIM_PeriodElapsedCallback + 58
-        0x0800516e:    f002f8fb    ....    BL       key_callback_handle ; 0x8007368
-        0x08005172:    8820         .      LDRH     r0,[r4,#0]
-        0x08005174:    f5b07f7a    ..z.    CMP      r0,#0x3e8
-        0x08005178:    d101        ..      BNE      0x800517e ; HAL_TIM_PeriodElapsedCallback + 70
-        0x0800517a:    2000        .       MOVS     r0,#0
-        0x0800517c:    8020         .      STRH     r0,[r4,#0]
-        0x0800517e:    2001        .       MOVS     r0,#1
-        0x08005180:    f002fc36    ..6.    BL       my_tick_inc ; 0x80079f0
-        0x08005184:    f002faa8    ....    BL       key_detect_scan ; 0x80076d8
-        0x08005188:    f24000d4    @...    MOVW     r0,#0xd4
-        0x0800518c:    f2c24000    ...@    MOVT     r0,#0x2400
-        0x08005190:    f7fcfd82    ....    BL       HAL_ADC_Start_IT ; 0x8001c98
-        0x08005194:    8820         .      LDRH     r0,[r4,#0]
-        0x08005196:    3001        .0      ADDS     r0,#1
-        0x08005198:    8020         .      STRH     r0,[r4,#0]
-        0x0800519a:    bd10        ..      POP      {r4,pc}
-        0x0800519c:    0000        ..      MOVS     r0,r0
+        0x0800515c:    8820         .      LDRH     r0,[r4,#0]
+        0x0800515e:    4348        HC      MULS     r0,r1,r0
+        0x08005160:    f6491199    I...    MOV      r1,#0x9999
+        0x08005164:    f6c11199    ....    MOVT     r1,#0x1999
+        0x08005168:    ea4f0070    O.p.    ROR      r0,r0,#1
+        0x0800516c:    4288        .B      CMP      r0,r1
+        0x0800516e:    d801        ..      BHI      0x8005174 ; HAL_TIM_PeriodElapsedCallback + 60
+        0x08005170:    f002f8fa    ....    BL       key_callback_handle ; 0x8007368
+        0x08005174:    8820         .      LDRH     r0,[r4,#0]
+        0x08005176:    f5b07f7a    ..z.    CMP      r0,#0x3e8
+        0x0800517a:    d101        ..      BNE      0x8005180 ; HAL_TIM_PeriodElapsedCallback + 72
+        0x0800517c:    2000        .       MOVS     r0,#0
+        0x0800517e:    8020         .      STRH     r0,[r4,#0]
+        0x08005180:    8820         .      LDRH     r0,[r4,#0]
+        0x08005182:    3001        .0      ADDS     r0,#1
+        0x08005184:    8020         .      STRH     r0,[r4,#0]
+        0x08005186:    2001        .       MOVS     r0,#1
+        0x08005188:    f002fc32    ..2.    BL       my_tick_inc ; 0x80079f0
+        0x0800518c:    f002faa4    ....    BL       key_detect_scan ; 0x80076d8
+        0x08005190:    f24000d4    @...    MOVW     r0,#0xd4
+        0x08005194:    f2c24000    ...@    MOVT     r0,#0x2400
+        0x08005198:    f7fcfd7e    ..~.    BL       HAL_ADC_Start_IT ; 0x8001c98
+        0x0800519c:    bd10        ..      POP      {r4,pc}
         0x0800519e:    0000        ..      MOVS     r0,r0
     HAL_TIM_TriggerCallback
         0x080051a0:    4770        pG      BX       lr
@@ -11844,7 +11844,7 @@
 
 
 ** Section #4 '.debug_abbrev' (SHT_PROGBITS)
-    Size   : 8903 bytes
+    Size   : 8884 bytes
 
 
 ** Section #5 '.debug_frame' (SHT_PROGBITS)
@@ -11852,11 +11852,11 @@
 
 
 ** Section #6 '.debug_info' (SHT_PROGBITS)
-    Size   : 95071 bytes
+    Size   : 95067 bytes
 
 
 ** Section #7 '.debug_line' (SHT_PROGBITS)
-    Size   : 83118 bytes
+    Size   : 83126 bytes
 
 
 ** Section #8 '.debug_loc' (SHT_PROGBITS)
@@ -11874,7 +11874,7 @@
 ** Section #11 '.symtab' (SHT_SYMTAB)
     Size   : 11296 bytes (alignment 4)
     String table #12 '.strtab'
-    Last local symbol no. 336
+    Last local symbol no. 335
 
 
 ** Section #12 '.strtab' (SHT_STRTAB)

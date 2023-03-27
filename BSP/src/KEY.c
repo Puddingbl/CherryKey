@@ -76,7 +76,7 @@ void key_init(void) {
 	slink_init(&key_link, key_sll, KEY_NUMBER+2);
 	queue_init(&key_cb_queue, key_cb_array, KEY_QUEUE_LEN);
 	
-	/* 创建按键 */
+	/* 用户创建按键 */
 	/* gpio按键 */
 	key_create(&key1, &key_level_read, (key_port*)keya_GPIO_Port, keya_Pin, 1);
 	key_create(&key2, &key_level_read, (key_port*)keyb_GPIO_Port, keyb_Pin, 2);	
@@ -163,7 +163,7 @@ static void key_create(key_t *key_num, void *read, key_port *gpiox, key_pin gpio
 		key_num->lp_cb[i].async    = 0;	
 	}	
 	
-	slink_insert(&key_link, id, (uint16_t*)key_num);
+	slink_insert(&key_link, id, key_num);
 }
 
 static key_level_e key_level_read(key_port *port, key_pin pin) {

@@ -11,8 +11,6 @@ extern "C" {
 
 /* define---------------------------------------------------------------------*/
 
-#define Queue_Size     30
-
 typedef enum 
 {
 	Q_ERROR = -1,

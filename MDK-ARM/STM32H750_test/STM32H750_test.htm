@@ -3,7 +3,7 @@
 <title>Static Call Graph - [STM32H750_test\STM32H750_test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM32H750_test\STM32H750_test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue Mar 21 16:05:00 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Thu Mar 23 11:41:06 2023
 <BR><P>
 <H3>Maximum Stack Usage =        368 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1399,7 +1399,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
 
-<P><STRONG><a name="[11a]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, run.o(.text.HAL_TIM_PeriodElapsedCallback))
+<P><STRONG><a name="[11a]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, run.o(.text.HAL_TIM_PeriodElapsedCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; key_detect_scan &rArr; key_detect &rArr; key_doube_click &rArr; key_dbclick_callback &rArr; queue_insert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_tick_inc
@@ -1737,6 +1737,14 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> key_demo.o(.text.key_demo_init)
 </UL>
+<P><STRONG><a name="[98]"></a>key3_click</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, key_demo.o(.text.key3_click))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = key3_click &rArr; HAL_GPIO_WritePin
+</UL>
+<BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> key_demo.o(.text.key_demo_init)
+<LI> key_demo.o(.text.key1_dbclick)
+</UL>
 <P><STRONG><a name="[9e]"></a>key4_click</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, key_demo.o(.text.key4_click))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = key4_click &rArr; HAL_GPIO_WritePin
 </UL>
@@ -2035,14 +2043,6 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_detect
 </UL>
 
-<P><STRONG><a name="[98]"></a>key3_click</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, key_demo.o(.text.key3_click))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = key3_click &rArr; HAL_GPIO_WritePin
-</UL>
-<BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-</UL>
-<BR>[Address Reference Count : 2]<UL><LI> key_demo.o(.text.key_demo_init)
-<LI> key_demo.o(.text.key1_dbclick)
-</UL>
 <P><STRONG><a name="[c7]"></a>LL_ADC_Disable</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32h7xx_hal_adc.o(.text.LL_ADC_Disable))
 <BR><BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Disable
 </UL>
